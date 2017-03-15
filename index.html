@@ -1,20 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Template</title>
+<title>Hubby</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="material.deep_purple-yellow.min.css">
 <link rel="stylesheet" href="styles.css">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script defer src="material.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+function wp(){
+    var datum = new Date();
+    var dag = new Array(7);
+    dag[0] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img103.png'";
+    dag[1] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img100.jpg'";
+    dag[2] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img101.png'";
+    dag[3] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img102.jpg'";
+    dag[4] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img104.jpg'";
+    dag[5] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img4.jpg'";
+    dag[6] = "'http://4dm7pi3anfms2bn7sk7u16h1.wpengine.netdna-cdn.com/wp-content/uploads/2015/07/Windows10-wallpaper-img1.jpg'";
+
+    var n = dag[datum.getDay()];
+    var burl = "url(" + n + ") center / cover";
+document.getElementById("bovenkant").style.background = burl;
+}
+</script>
  <style>
 body, html, .main {
     height: 100%;
     background: url("http://i.imgur.com/wt4NRqA.jpg")
 }
 </style>
+<script>
+function clock() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(clock, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+</script>
+<script>
+function hello() {
+document.getElementById('hello').innerHTML =
+    "Hello";
+  window.setTimeout(hallo,3000);
+}
+function hallo() {
+document.getElementById('hello').innerHTML =
+    "Hallo";
+  window.setTimeout(czesc,3000);
+}
+function czesc() {
+document.getElementById('hello').innerHTML =
+    "Cześć";
+  window.setTimeout(halla,3000);
+}
+function halla() {
+document.getElementById('hello').innerHTML =
+    "Hallå";
+  window.setTimeout(koni,3000);
+}
+function koni() {
+document.getElementById('hello').innerHTML =
+    "こんにちは";
+  window.setTimeout(nihao,3000);
+}
+function nihao() {
+document.getElementById('hello').innerHTML =
+    "你好";
+  window.setTimeout(merhaba,3000);
+}
+function merhaba() {
+document.getElementById('hello').innerHTML =
+    "Merhaba";
+  window.setTimeout(marhabaan,3000);
+}
+function marhabaan() {
+document.getElementById('hello').innerHTML =
+    "مرحبا";
+  window.setTimeout(bonjour,3000);
+}
+function bonjour() {
+document.getElementById('hello').innerHTML =
+    "Bonjour";
+  window.setTimeout(zdravo,3000);
+}
+function zdravo() {
+document.getElementById('hello').innerHTML =
+    "Zdravo";
+  window.setTimeout(hodi,3000);
+}
+function hodi() {
+document.getElementById('hello').innerHTML =
+    "Hodi";
+  window.setTimeout(hola,3000);
+}
+function hola() {
+document.getElementById('hello').innerHTML =
+    "¡Hola";
+  window.setTimeout(perz,3000);
+}
+function perz() {
+document.getElementById('hello').innerHTML =
+    "سلام";
+  window.setTimeout(hello,3000);
+}
+</script>
 <script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -27,51 +128,58 @@ $(document).ready(function(){
 
       // Store hash
       var hash = this.hash;
-
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
         scrollTop: $(hash).offset().top
       }, 800, function(){
-   
-        // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
-    } // End if
+    }
   });
 });
 </script>
+<script>
+  $("*").on('click', function(event){
+    event.stopPropagation();
+});
+</script>
 </head>
-<body>
-<div class="bovenkant mdl-layout mdl-js-layout">
+<body onload="clock(), hello(), wp()">
+<div class="bovenkant mdl-layout mdl-js-layout" id="bovenkant">
   <header class="mdl-layout__header mdl-layout__header--transparent" id="responsehide">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Template</span>
+      <span class="mdl-layout-title">Hubby</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="1.html">1</a>
-        <a class="mdl-navigation__link" href="2.html">2</a>
-        <a class="mdl-navigation__link" href="3.html">3</a>
-        <a class="mdl-navigation__link" href="4.html">4</a>
-        <a class="mdl-navigation__link" href="5.html">5</a>
       </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Template</span>
+    <span class="mdl-layout-title">Hubby</span>
     <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="1.html">1</a>
-        <a class="mdl-navigation__link" href="2.html">2</a>
-        <a class="mdl-navigation__link" href="3.html">3</a>
-        <a class="mdl-navigation__link" href="4.html">4</a>
-        <a class="mdl-navigation__link" href="5.html">5</a>
     </nav>
   </div>
+  <div class="searchdiv">
+<form method="get" class="googlesearch" action="http://www.google.com/search">
+  <div class="googlesearch mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input wit" type="text" id="googlesearch" name="q">
+    <label class="mdl-textfield__label wit" for="googlesearch">Google</label>
+  </div>
+<button type="submit" class="wit mdl-button mdl-js-button mdl-button--icon">
+    <i class="material-icons">search</i>
+</button>
+</form>
+</div>
     <div class="landingdiv">
-    <h1 class="landingtitle">We are template.</h1>
-    <h2 class="landingsubtitle">Scroll down to learn more...</h2>
+    <h1 class="landingtitle" id="clock"></h1>
+    <h2 class="landingsubtitle" id="hello"></h2>
     <div class="wainotwurk">
-    <div style="text-decoration: none;" class="material-icons arrow"><a class="invislink" href="#section2">keyboard_arrow_down</a></div>
+    <div style="text-decoration: none;" class="material-icons arrow"><a class="invislink" href="#below">keyboard_arrow_down</a></div>
+    <form action="#">
+  <div class="miza mdl-textfield mdl-js-textfield">
+    <input class="wit siza mdl-textfield__input" type="text" id="focus">
+    <label class="wit miza mdl-textfield__label" for="focus">What's on your mind?</label>
+  </div>
+</form>
     </div>
     </div>
     </div>
@@ -81,10 +189,10 @@ $(document).ready(function(){
   </section>
 </div>
 <br>
-<div class="main" id="section2">
+<div class="main" id="below">
   <div class="infokaart mdl-card mdl-shadow--2dp">
   <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Html 5</h2>
+    <h2 class="mdl-card__title-text"></h2>
   </div>
   <div class="mdl-card__supporting-text">
     <p>Hello.</p>
@@ -127,19 +235,82 @@ $(document).ready(function(){
   </div>
 </div>
 <br>
-    <div class="aot">
+  <div class="aot">
     <button id="knopmenu" class="transbtn mdl-button mdl-button--fab mdl-js-button mdl-button--colored mdl-shadow--8dp">
-      <i class="material-icons">add</i>
+      <i class="material-icons">assignment</i>
     </button>
   <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect mdl-shadow--8dp" for="knopmenu">
-    <li class="mdl-menu__item">1</li>
-    <li class="mdl-menu__item" >2</li>
-    <li class="mdl-menu__item">3</li>
+<div class="todo">
+<div id="myDIV" class="header">
+  <h4 style="margin-left: 1%; margin-bottom: -1%; margin-top: -2%">Todo</h4>
+  <div class="mdl-textfield mdl-js-textfield">
+      <input style="margin-left: 2%" class="mdl-textfield__input" type="text" id="myInput" placeholder="Add Todo">
+</div>
+<span onclick="newElement()" class="material-icons addBtn">add</span>
+</div>
+
+<ul id="myUL">
+</ul>
+</div>
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00A0\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    window.location = "https://player.vimeo.com/video/45196609?autoplay=1";
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00A0\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
   </ul>
 </div>
-  <section>
-    
-  </section>
 </div>
 </body>
 </html>
