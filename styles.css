@@ -130,3 +130,10 @@ a {
   text-align: center;
   width: 100%;
 }
+ul li.checked {
+  text-decoration: line-through;
+}
+ul {
+  word-wrap: break-word;
+  line-height: 110%;
+}
