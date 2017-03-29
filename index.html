@@ -290,7 +290,11 @@ function newElement() {
   li.appendChild(t);
   if (inputValue === '') {
     window.location = "https://player.vimeo.com/video/45196609?autoplay=1";
-  } else {
+  }
+  else if (inputValue === 'dodo') {
+    window.location = "http://photos1.blogger.com/blogger/4718/1907/400/super_dodo.jpg";
+  }
+  else {
     document.getElementById("myUL").appendChild(li);
   }
   document.getElementById("myInput").value = "";
