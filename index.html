@@ -263,7 +263,6 @@ for (i = 0; i < myNodelist.length; i++) {
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
-
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
 var i;
@@ -273,7 +272,6 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
-
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
@@ -281,7 +279,6 @@ list.addEventListener('click', function(ev) {
     ev.target.classList.toggle('checked');
   }
 }, false);
-
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
@@ -305,24 +302,18 @@ function newElement() {
   } 
   else if (inputValue === 'i do not think that is right') {
     window.location = "https://www.google.nl/webhp?sourceid=chrome-instant&rlz=1CAACAJ_enNL679NL679&ion=1&espv=2&ie=UTF-8#q=How+late+is+it&*";
-  }  
-  else if (inputValue === 'who is da sam ringeling') {
-    window.location = "https://plus.google.com/photos/photo/108245741741438349528/6402882621565259586?icm=false&authkey=CPmD7NCgp4vQdw";
-  else if (inputValue === 'who is da sam rotgans') {
-      window.location = "https://plus.google.com/photos/photo/106429852466900382025/6403596212805100946?icm=false&authkey=COD52MyAnc-d3wE";
-  }
+  } 
+  
     
-   else {
+  else {
     document.getElementById("myUL").appendChild(li);
   }
   document.getElementById("myInput").value = "";
-
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00A0\u00D7");
   span.className = "close";
   span.appendChild(txt);
   li.appendChild(span);
-
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
       var div = this.parentElement;
