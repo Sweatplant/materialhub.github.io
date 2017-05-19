@@ -52,67 +52,67 @@ function checkTime(i) {
 <script>
 function hello() {
 document.getElementById('hello').innerHTML =
-    "Hello" + "," + "test";
+    "Hello" + ", " + localStorage.name;
   window.setTimeout(hallo,3000);
 }
 function hallo() {
 document.getElementById('hello').innerHTML =
-    "Hallo";
+    "Hallo" + ", " + localStorage.name;
   window.setTimeout(czesc,3000);
 }
 function czesc() {
 document.getElementById('hello').innerHTML =
-    "Cześć";
+    "Cześć" + ", " + localStorage.name;
   window.setTimeout(halla,3000);
 }
 function halla() {
 document.getElementById('hello').innerHTML =
-    "Hallå";
+    "Hallå" + ", " + localStorage.name;
   window.setTimeout(koni,3000);
 }
 function koni() {
 document.getElementById('hello').innerHTML =
-    "こんにちは";
+    "こんにちは" + ", " + localStorage.name;
   window.setTimeout(nihao,3000);
 }
 function nihao() {
 document.getElementById('hello').innerHTML =
-    "你好";
+    "你好" + ", " + localStorage.name;
   window.setTimeout(merhaba,3000);
 }
 function merhaba() {
 document.getElementById('hello').innerHTML =
-    "Merhaba";
+    "Merhaba" + ", " + localStorage.name;
   window.setTimeout(marhabaan,3000);
 }
 function marhabaan() {
 document.getElementById('hello').innerHTML =
-    "مرحبا";
+    "مرحبا" + ", " + localStorage.name;
   window.setTimeout(bonjour,3000);
 }
 function bonjour() {
 document.getElementById('hello').innerHTML =
-    "Bonjour";
+    "Bonjour" + ", " + localStorage.name;
   window.setTimeout(zdravo,3000);
 }
 function zdravo() {
 document.getElementById('hello').innerHTML =
-    "Zdravo";
+    "Zdravo" + ", " + localStorage.name;
   window.setTimeout(hodi,3000);
 }
 function hodi() {
 document.getElementById('hello').innerHTML =
-    "Hodi";
+    "Hodi" + ", " + localStorage.name;
   window.setTimeout(hola,3000);
 }
 function hola() {
 document.getElementById('hello').innerHTML =
-    "¡Hola";
+    "¡Hola" + ", " + localStorage.name;
   window.setTimeout(perz,3000);
 }
 function perz() {
 document.getElementById('hello').innerHTML =
-    "سلام";
+    "سلام" + ", " + localStorage.name;
   window.setTimeout(hello,3000);
 }
 </script>
@@ -155,8 +155,19 @@ $(document).ready(function(){
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Hubby</span>
-    <nav class="mdl-navigation">
-    </nav>
+    <form id="form" onsubmit="return false;">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input type="text" class="mdl-textfield__input" id="nameinput" />
+    <label class="mdl-textfield__label" for="nameinput">Name</label>
+  </div>
+  <button type="submit" style="margin-top: -10%; width: 100%;" onclick="savenameascookie();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
+</form>
+<script>
+function savenameascookie() {
+    name = document.getElementById("nameinput").value;
+    localStorage.name = name;
+}
+</script>
   </div>
   <div class="searchdiv">
 <form method="get" class="googlesearch" action="http://www.google.com/search">
@@ -297,10 +308,10 @@ function newElement() {
   }
   else if (inputValue === 'LOL') {
     window.location = "https://lh3.googleusercontent.com/-_uxXSAU7EoM/AAAAAAAAAAI/AAAAAAAAA78/sK_PfDopHsU/s640/photo.jpg";
-  } 
+  }
   else if (inputValue === 'i do not think that is right') {
     window.location = "https://www.google.nl/webhp?sourceid=chrome-instant&rlz=1CAACAJ_enNL679NL679&ion=1&espv=2&ie=UTF-8#q=How+late+is+it&*";
-  } 
+  }
   
     
   else {
