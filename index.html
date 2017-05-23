@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Hubby</title>
+<link rel="icon" type="image/png" href="https://www.materialui.co/materialIcons/action/home_grey_192x192.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="material.deep_purple-yellow.min.css">
@@ -166,6 +167,23 @@ $(document).ready(function(){
 function savenameascookie() {
     name = document.getElementById("nameinput").value;
     localStorage.name = name;
+}
+</script>
+    <form id="form" onsubmit="return false;">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input type="text" class="mdl-textfield__input" id="wallpaperinput" />
+    <label class="mdl-textfield__label" for="wallpaperinput">Custom Wallpaper Url</label>
+  </div>
+  <button type="submit" style="margin-top: -10%; width: 100%;" onclick="savewallpaperascookie();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
+</form>
+  <button onclick="removecustwpp();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Remove<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">close</i></button>
+<script>
+function savewallpaperascookie() {
+    wallpaper = document.getElementById("wallpaperinput").value;
+    localStorage.wallpaper = wallpaper;
+}
+function removecustwpp() {
+    localStorage.removeItem("wallpaper");
 }
 </script>
   </div>
