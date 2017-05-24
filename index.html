@@ -12,7 +12,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 function wp(){
-    var datum = new Date();
+  if (localStorage.wallpaper == undefined){
+      var datum = new Date();
     var dag = new Array(7);
     dag[0] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130514-011007_trey-ratcliff-the-road_high_resolution.jpg'";
     dag[1] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130514-013335_Trey%20Ratcliff%20-%20OTW%20to%20Glen_high_resolution.jpg'";
@@ -25,6 +26,10 @@ function wp(){
     var n = dag[datum.getDay()];
     var burl = "url(" + n + ") center / cover";
 document.getElementById("bovenkant").style.background = burl;
+}
+else if (localStorage.wallpaper != undefined){
+document.getElementById("bovenkant").style.background = "url(" + localStorage.wallpaper + ") center / cover";
+}
 }
 </script>
  <style>
@@ -174,9 +179,9 @@ function savenameascookie() {
     <input type="text" class="mdl-textfield__input" id="wallpaperinput" />
     <label class="mdl-textfield__label" for="wallpaperinput">Custom Wallpaper Url</label>
   </div>
-  <button type="submit" style="margin-top: -10%; width: 100%;" onclick="savewallpaperascookie();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
+  <button type="submit" style="margin-top: -10%; width: 100%;" onclick="savewallpaperascookie(), wp();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
 </form>
-  <button onclick="removecustwpp();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Remove<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">close</i></button>
+  <button onclick="removecustwpp(), wp();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Remove<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">close</i></button>
 <script>
 function savewallpaperascookie() {
     wallpaper = document.getElementById("wallpaperinput").value;
