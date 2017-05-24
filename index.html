@@ -4,152 +4,22 @@
 <title>Hubby</title>
 <link rel="icon" type="image/png" href="https://www.materialui.co/materialIcons/action/home_grey_192x192.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="material.deep_purple-yellow.min.css">
 <link rel="stylesheet" href="styles.css">
 <script defer src="material.min.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i' rel='stylesheet' type='text/css'>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-function wp(){
-  if (localStorage.wallpaper == undefined){
-      var datum = new Date();
-    var dag = new Array(7);
-    dag[0] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130514-011007_trey-ratcliff-the-road_high_resolution.jpg'";
-    dag[1] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130514-013335_Trey%20Ratcliff%20-%20OTW%20to%20Glen_high_resolution.jpg'";
-    dag[2] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130514-013029_trey-ratcliff-bridge-oshir_high_resolution.jpg'";
-    dag[3] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130206-212548_image%20(20)_high_resolution.jpg'";
-    dag[4] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130206-212207_image%20(13)_high_resolution.jpg'";
-    dag[5] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20130206-212013_Tokyo%20Smog_high_resolution.jpg'";
-    dag[6] = "'https://storage.googleapis.com/chromeos-wallpaper-public/20120827-185431_2-landscape5_high_resolution.jpg'";
-
-    var n = dag[datum.getDay()];
-    var burl = "url(" + n + ") center / cover";
-document.getElementById("bovenkant").style.background = burl;
-}
-else if (localStorage.wallpaper != undefined){
-document.getElementById("bovenkant").style.background = "url(" + localStorage.wallpaper + ") center / cover";
-}
-}
-</script>
+<script src="jquery.min.js"></script>
+<script src="scripts.js"></script>
  <style>
 body, html, .main {
     height: 100%;
     background: url("https://i.imgur.com/wt4NRqA.jpg")
 }
 </style>
-<script>
-function clock() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('clock').innerHTML =
-    h + ":" + m + ":" + s;
-    var t = setTimeout(clock, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};
-    return i;
-}
-</script>
-<script>
-function hello() {
-document.getElementById('hello').innerHTML =
-    "Hello" + ", " + localStorage.name;
-  window.setTimeout(hallo,3000);
-}
-function hallo() {
-document.getElementById('hello').innerHTML =
-    "Hallo" + ", " + localStorage.name;
-  window.setTimeout(czesc,3000);
-}
-function czesc() {
-document.getElementById('hello').innerHTML =
-    "Cześć" + ", " + localStorage.name;
-  window.setTimeout(halla,3000);
-}
-function halla() {
-document.getElementById('hello').innerHTML =
-    "Hallå" + ", " + localStorage.name;
-  window.setTimeout(koni,3000);
-}
-function koni() {
-document.getElementById('hello').innerHTML =
-    "こんにちは" + ", " + localStorage.name;
-  window.setTimeout(nihao,3000);
-}
-function nihao() {
-document.getElementById('hello').innerHTML =
-    "你好" + ", " + localStorage.name;
-  window.setTimeout(merhaba,3000);
-}
-function merhaba() {
-document.getElementById('hello').innerHTML =
-    "Merhaba" + ", " + localStorage.name;
-  window.setTimeout(marhabaan,3000);
-}
-function marhabaan() {
-document.getElementById('hello').innerHTML =
-    "مرحبا" + ", " + localStorage.name;
-  window.setTimeout(bonjour,3000);
-}
-function bonjour() {
-document.getElementById('hello').innerHTML =
-    "Bonjour" + ", " + localStorage.name;
-  window.setTimeout(zdravo,3000);
-}
-function zdravo() {
-document.getElementById('hello').innerHTML =
-    "Zdravo" + ", " + localStorage.name;
-  window.setTimeout(hodi,3000);
-}
-function hodi() {
-document.getElementById('hello').innerHTML =
-    "Hodi" + ", " + localStorage.name;
-  window.setTimeout(hola,3000);
-}
-function hola() {
-document.getElementById('hello').innerHTML =
-    "¡Hola" + ", " + localStorage.name;
-  window.setTimeout(perz,3000);
-}
-function perz() {
-document.getElementById('hello').innerHTML =
-    "سلام" + ", " + localStorage.name;
-  window.setTimeout(hello,3000);
-}
-</script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-
-      // Store hash
-      var hash = this.hash;
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        window.location.hash = hash;
-      });
-    }
-  });
-});
-</script>
-<script>
-  $("*").on('click', function(event){
-    event.stopPropagation();
-});
-</script>
 </head>
-<body onload="clock(), hello(), wp()">
+<body>
 <div class="bovenkant mdl-layout mdl-js-layout" id="bovenkant">
   <header class="mdl-layout__header mdl-layout__header--transparent" id="responsehide">
     <div class="mdl-layout__header-row">
@@ -166,31 +36,16 @@ $(document).ready(function(){
     <input type="text" class="mdl-textfield__input" id="nameinput" />
     <label class="mdl-textfield__label" for="nameinput">Name</label>
   </div>
-  <button type="submit" style="margin-top: -10%; width: 100%;" onclick="savenameascookie();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
+  <button type="button" style="margin-top: -10%; width: 100%;" id="snc" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
 </form>
-<script>
-function savenameascookie() {
-    name = document.getElementById("nameinput").value;
-    localStorage.name = name;
-}
-</script>
     <form id="form" onsubmit="return false;">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
     <input type="text" class="mdl-textfield__input" id="wallpaperinput" />
     <label class="mdl-textfield__label" for="wallpaperinput">Custom Wallpaper Url</label>
   </div>
-  <button type="submit" style="margin-top: -10%; width: 100%;" onclick="savewallpaperascookie(), wp();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
+  <button type="button" style="margin-top: -10%; width: 100%;" id="appwpp" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Apply<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">check</i></button>
 </form>
-  <button onclick="removecustwpp(), wp();" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Remove<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">close</i></button>
-<script>
-function savewallpaperascookie() {
-    wallpaper = document.getElementById("wallpaperinput").value;
-    localStorage.wallpaper = wallpaper;
-}
-function removecustwpp() {
-    localStorage.removeItem("wallpaper");
-}
-</script>
+  <button id="remwpp" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Remove<i class="material-icons" style="font-size: 20px; margin-bottom: 3px">close</i></button>
   </div>
   <div class="searchdiv">
 <form method="get" class="googlesearch" action="https://www.google.com/search">
@@ -278,82 +133,12 @@ function removecustwpp() {
   <div class="mdl-textfield mdl-js-textfield">
       <input style="margin-left: 2%" class="mdl-textfield__input" type="text" id="myInput" placeholder="Add Todo">
 </div>
-<span onclick="newElement()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect addBtn"><i class="material-icons">add</i></span>
+<span id="todonewelem" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect addBtn"><i class="material-icons">add</i></span>
 </div>
-
+<script src="todo.js"></script>
 <ul id="myUL">
 </ul>
 </div>
-<script>
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00A0\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
-}
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    window.location = "https://player.vimeo.com/video/45196609?autoplay=1";
-  }
-  else if (inputValue === '#dodo') {
-    window.location = "http://photos1.blogger.com/blogger/4718/1907/400/super_dodo.jpg";
-  }
-  else if (inputValue === '9001') {
-    window.location = "https://68.media.tumblr.com/16d8269489d6c0a1da9575850a07acbb/tumblr_n5hbwzUzJ01soc18mo1_500.gif";
-  }
-  else if (inputValue === 'who you gonna call') {
-    window.location = "https://media.tenor.co/images/27fabbb802d6f33c93d0b212f9ec2754/tenor.gif";
-  }
-  else if (inputValue === 'LOL') {
-    window.location = "https://lh3.googleusercontent.com/-_uxXSAU7EoM/AAAAAAAAAAI/AAAAAAAAA78/sK_PfDopHsU/s640/photo.jpg";
-  }
-  else if (inputValue === 'i do not think that is right') {
-    window.location = "https://www.google.nl/webhp?sourceid=chrome-instant&rlz=1CAACAJ_enNL679NL679&ion=1&espv=2&ie=UTF-8#q=How+late+is+it&*";
-  }
-  
-    
-  else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00A0\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-}
-</script>
   </ul>
 </div>
 </div>

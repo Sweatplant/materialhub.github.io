@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "MaterialHub",
+  "description": "Simple web greeter page with a clock and other features Based on GetMdl - getmdl.io",
+  "version": "0.0.1",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ]
+}
