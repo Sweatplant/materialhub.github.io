@@ -141,7 +141,7 @@ function removecustwpp() {
 
 document.addEventListener('DOMContentLoaded', function() {
   clock(), hello(), wp();
-      var snc = document.getElementById('snc');
+    var snc = document.getElementById('snc');
     snc.addEventListener('click', function() {
         savenameascookie();
     });
@@ -157,4 +157,32 @@ document.addEventListener('DOMContentLoaded', function() {
     remwpp.addEventListener('click', function() {
         removecustwpp(), wp();
     });
+    document.getElementById('nameinput').addEventListener("keydown", function() {
+        namechar(event);
+    });
+    document.getElementById('wallpaperinput').addEventListener("keydown", function() {
+        wppchar(event);
+    });
+    document.getElementById('todoinput').addEventListener("keydown", function() {
+        todochar(event);
+    });
 });
+
+function namechar(event) {
+    var char = event.keyCode;
+    if (char == 13) {
+        savenameascookie();
+    }
+}
+function wppchar(event) {
+    var char = event.keyCode;
+    if (char == 13) {
+        savewallpaperascookie(), wp();
+    }
+}
+function todochar(event) {
+    var char = event.keyCode;
+    if (char == 13) {
+        newElement();
+    }
+}
